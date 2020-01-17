@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = event.target;
     if (target === cart || target.classList.contains('cart-close') || event.keyCode === 27) {
       cart.style.display = '';
-      document.removeEventListener('keyup', closeCart);
+      document.removeEventListener('keydown', closeCart);
     }
   };
 
   const openCart = event => {
     event.preventDefault();
     cart.style.display = 'flex';
-    document.addEventListener('keyup', closeCart);
+    document.addEventListener('keydown', closeCart);
   };
 
   const renderCard = goods => {
